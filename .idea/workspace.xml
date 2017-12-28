@@ -2,42 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d932ed0-9e21-4d84-bbc2-b75075dbee2d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_colors.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_util.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/author/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/authors/posts_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/author/tickets_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/authors/tickets_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/author_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/author_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/shop_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/shop_controller.rb" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/authors/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/authors/posts_controller.rb" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/shop/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/shop/posts_controller.rb" />
+      <change beforePath="$PROJECT_DIR$/app/models/author.rb" afterPath="$PROJECT_DIR$/app/models/author.rb" />
       <change beforePath="$PROJECT_DIR$/app/models/post.rb" afterPath="$PROJECT_DIR$/app/models/post.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/posts/_form.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/_post.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/posts/_post.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/_post.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/authors/posts/_post.json.jbuilder" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/posts/edit.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/index.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/posts/index.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/authors/posts/index.json.jbuilder" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/new.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/posts/new.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/show.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/posts/show.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/posts/show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/authors/posts/show.json.jbuilder" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/tickets/_form.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/_ticket.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/tickets/_ticket.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/_ticket.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/authors/tickets/_ticket.json.jbuilder" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/tickets/edit.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/index.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/tickets/index.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/authors/tickets/index.json.jbuilder" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/new.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/tickets/new.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/show.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/tickets/show.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/author/tickets/show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/authors/tickets/show.json.jbuilder" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/author.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/author.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/shop/posts/_post.html.erb" afterPath="$PROJECT_DIR$/app/views/shop/posts/_post.html.erb" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
+      <change beforePath="$PROJECT_DIR$/app/models/ticket.rb" afterPath="$PROJECT_DIR$/app/models/ticket.rb" />
+      <change beforePath="$PROJECT_DIR$/app/views/authors/posts/_post.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/posts/_post.html.erb" />
+      <change beforePath="$PROJECT_DIR$/app/views/authors/posts/index.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/posts/index.html.erb" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
@@ -62,101 +36,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/authors/posts/edit.html.erb">
+      <file leaf-file-name="post.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/post.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_post.json.jbuilder" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/authors/posts/_post.json.jbuilder">
+      <file leaf-file-name="posts_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/authors/posts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_util.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/_util.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/authors/posts/_form.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="45" column="15" lean-forward="false" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/authors/posts/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_post.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/authors/posts/_post.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="posts.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/posts.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="author.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/author.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_colors.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/_colors.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="317">
+              <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -176,6 +70,7 @@
       <find>shop</find>
       <find>shop§</find>
       <find>must ex</find>
+      <find>set_post</find>
       <find>card-</find>
     </findStrings>
     <replaceStrings>
@@ -183,8 +78,8 @@
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/controllers/author</dir>
-      <dir>$PROJECT_DIR$/app</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/app</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -198,7 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/tickets.scss" />
         <option value="$PROJECT_DIR$/app/views/tickets/_ticket.html.erb" />
         <option value="$PROJECT_DIR$/app/models/ticket.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tickets_controller.rb" />
@@ -206,7 +100,6 @@
         <option value="$PROJECT_DIR$/app/controllers/shop/pages_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/shop/tickets_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/shop.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/shop/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/shop/tickets/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shop/tickets/_ticket.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/author/tickets_controller.rb" />
@@ -218,7 +111,6 @@
         <option value="$PROJECT_DIR$/app/views/shop/posts/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/author/tickets/_ticket.html.erb" />
         <option value="$PROJECT_DIR$/app/views/author/tickets/index.html.erb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20171228004551_devise_create_authors.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20171228004807_add_author_id_to_posts.rb" />
@@ -226,7 +118,6 @@
         <option value="$PROJECT_DIR$/app/controllers/shop_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/authors/tickets_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/authors/tickets/_ticket.html.erb" />
         <option value="$PROJECT_DIR$/app/views/authors/tickets/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/authors/tickets/new.html.erb" />
@@ -235,20 +126,24 @@
         <option value="$PROJECT_DIR$/app/views/shop/posts/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/authors/posts/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/author_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/post.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/authors/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shop/posts/_post.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/views/authors/posts/_post.html.erb" />
         <option value="$PROJECT_DIR$/app/views/authors/posts/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/_colors.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/_util.scss" />
-        <option value="$PROJECT_DIR$/app/views/authors/posts/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/author.html.erb" />
         <option value="$PROJECT_DIR$/app/views/authors/posts/_form.html.erb" />
+        <option value="$PROJECT_DIR$/db/migrate/20171228182456_add_published_to_posts.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/controllers/shop/posts_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/authors/posts/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/authors/posts/_post.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/authors/posts_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/post.rb" />
       </list>
     </option>
   </component>
@@ -291,19 +186,6 @@
               <item name="bilety" type="b2602c69:ProjectViewProjectNode" />
               <item name="bilety" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bilety" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bilety" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bilety" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bilety" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bilety" type="b2602c69:ProjectViewProjectNode" />
@@ -352,36 +234,6 @@
               <item name="authors" type="462c0819:PsiDirectoryNode" />
               <item name="posts" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="bilety" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bilety" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="authors" type="462c0819:PsiDirectoryNode" />
-              <item name="tickets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bilety" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bilety" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bilety" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bilety" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bilety" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bilety" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="posts" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -395,7 +247,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="SearchEverywhereHistoryKey" value="application.js&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/assets/javascripts/application.js&#10;nav&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/layouts/_navbar.html.erb&#10;navbar&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/layouts/_navbar.html.erb&#10;post_cont&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/authors/posts_controller.rb&#10;author_con&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/author_controller.rb&#10;posts_con&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/authors/posts_controller.rb&#10;rout&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/routes.rb&#10;post.rb&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/models/post.rb&#10;author.rb&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/models/author.rb&#10;add a&#9;null&#9;null&#10;create a&#9;null&#9;null&#10;layout/a&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/layouts/author.html.erb&#10;develop&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/environments/development.rb&#10;deve&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/log/development.log&#10;env&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/environment.rb&#10;gem&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/Gemfile&#10;ticket.htm&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/author/tickets/_ticket.html.erb&#10;rou&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/routes.rb&#10;pos/in&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/index.html.erb&#10;post/edi&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/edit.html.erb&#10;post/new&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/new.html.erb&#10;post/show&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/show.html.erb&#10;post/in&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/index.html.erb&#10;router&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/routes.rb" />
+    <property name="SearchEverywhereHistoryKey" value="post_contr&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/authors/posts_controller.rb&#10;post&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/models/post.rb&#10;route&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/routes.rb&#10;POST_CONTR&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/authors/posts_controller.rb&#10;rou&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/routes.rb&#10;posts_co&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/shop/posts_controller.rb&#10;application.js&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/assets/javascripts/application.js&#10;nav&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/layouts/_navbar.html.erb&#10;navbar&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/layouts/_navbar.html.erb&#10;post_cont&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/authors/posts_controller.rb&#10;author_con&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/author_controller.rb&#10;posts_con&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/controllers/authors/posts_controller.rb&#10;rout&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/routes.rb&#10;post.rb&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/models/post.rb&#10;author.rb&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/models/author.rb&#10;add a&#9;null&#9;null&#10;create a&#9;null&#9;null&#10;layout/a&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/layouts/author.html.erb&#10;develop&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/environments/development.rb&#10;deve&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/log/development.log&#10;env&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/environment.rb&#10;gem&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/Gemfile&#10;ticket.htm&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/author/tickets/_ticket.html.erb&#10;pos/in&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/index.html.erb&#10;post/edi&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/edit.html.erb&#10;post/new&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/new.html.erb&#10;post/show&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/show.html.erb&#10;post/in&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/app/views/posts/index.html.erb&#10;router&#9;FILE&#9;file:///Users/striok/Studia/Moje z AGH/II/ZPW/bilety/config/routes.rb" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -519,12 +371,12 @@
       <workItem from="1514246625856" duration="606000" />
       <workItem from="1514247402476" duration="46000" />
       <workItem from="1514247481930" duration="84000" />
-      <workItem from="1514247588013" duration="32678000" />
+      <workItem from="1514247588013" duration="36437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36898000" />
+    <option name="totallyTimeSpent" value="40657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -539,7 +391,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52237004" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52237004" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29041487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -597,14 +449,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/tickets/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="40" column="36" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tickets/ticket.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -645,14 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ticket.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/shop.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -673,14 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/shop/pages_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -709,14 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="32" column="53" lean-forward="true" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -733,26 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/authors/tickets_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20171228004807_add_author_id_to_posts.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -785,62 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/shop_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/author_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/author.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/post.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/authors/posts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="50" column="11" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/shop/posts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -967,10 +715,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/authors/posts/_post.html.erb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20171228182456_add_published_to_posts.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ticket.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/authors/posts/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="45" column="15" lean-forward="false" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -991,18 +763,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/authors/posts/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/author.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="-39">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/authors/posts/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/authors/tickets_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="45" column="15" lean-forward="false" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/author_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/shop/pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/shop/posts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/shop_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/authors/posts/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/authors/posts/_post.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/authors/posts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/post.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
           <folding />
         </state>
       </provider>
