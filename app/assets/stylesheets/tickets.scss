@@ -1,0 +1,46 @@
+.picture-url {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 3px solid whitesmoke;
+  border-bottom: 0;
+}
+
+.content {
+  border: 3px solid whitesmoke;
+  background: whitesmoke;
+  width: 280px;
+  padding: 10px;
+}
+
+.btn-more {
+  width: 100%;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+div.wrapper {
+  position: relative;
+}
+
+div.description {
+  position: absolute;
+  top: 220px;
+  left: 7px;
+  background-color: black;
+  font-size: 15px;
+  color: white;
+  opacity: 0.8; 
+  width: 273px;
+}
+
+p.description_content {
+  padding: 10px;
+  margin: 0;
+}

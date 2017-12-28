@@ -1,0 +1,37 @@
+<div class="col-xl-3">
+  <div class="row">
+
+  </div>
+  <div class='row'>
+    <img class="picture-url col-centered" src="<%= ticket.picture_url %>" width="280" height="300" alt="Brak obrazu wydarzenia"/>
+    <div class="description col-centered">
+      <p class="description_content">
+      <h4 class="col-centered title"><%= ticket.name%></h4>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="content col-centered">
+      <div class="row">
+        <div class="col-xl-6">
+          <%= ticket.address %>
+        </div>
+        <div class="col-xl-6">
+         
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-4">
+
+    </div>
+    <div class="col-xl-4">
+      <%= link_to 'Edit', edit_author_ticket_path(ticket) %>
+    </div>
+    <div class="col-xl-4">
+
+    </div>
+  </div>
+</div>

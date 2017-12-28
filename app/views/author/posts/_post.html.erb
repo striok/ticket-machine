@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to post.title, author_post_path(post) %></td>
+  <td><%= link_to 'Edit', edit_author_post_path(post), class: 'btn btn-warning' %></td>
+  <td><%= link_to 'Usuń', author_post_path(post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %></td>
+</tr>

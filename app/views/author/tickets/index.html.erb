@@ -1,0 +1,14 @@
+<% provide(:page_title, 'Twoje Bilety') %>
+<% provide(:tickets_active, 'active') %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <h1>Twoje bilety</h1>
+</div>
+
+<div class="row">
+  <% @tickets.each do |ticket| %>
+    <%= render ticket %>
+  <% end %>
+</div>

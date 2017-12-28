@@ -1,0 +1,8 @@
+<% provide(:page_title, 'Nowy bilet') %>
+<% provide(:post_active, 'active') %>
+
+<h1>New Post</h1>
+
+<%= render 'form', post: @post %>
+
+<%= link_to 'Back', author_posts_path %>

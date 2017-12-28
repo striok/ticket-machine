@@ -1,0 +1,37 @@
+<% provide(:page_title, @ticket.name) %>
+<% provide(:tickets_active, 'active') %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ticket.name %>
+</p>
+
+<p>
+  <strong>Seat id seq:</strong>
+  <%= @ticket.seat_id_seq %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @ticket.address %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @ticket.price %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @ticket.email_address %>
+</p>
+
+<p>
+  <strong>Picture URL:</strong>
+  <%= @ticket.picture_url %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>
