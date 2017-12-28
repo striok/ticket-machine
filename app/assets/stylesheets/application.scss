@@ -1,13 +1,6 @@
 @import "bootstrap";
-
-.btn-pointer {
-  cursor: pointer;
-}
-
-
-
-
-
+@import "util";
+@import "colors";
 @import "navbar";
 @import "tickets";
 @import "posts";

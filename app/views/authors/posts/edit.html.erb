@@ -1,0 +1,4 @@
+<% provide(:page_title, "Edytuj #{@post.title}") %>
+<% provide(:post_active, 'active') %>
+
+<%= render 'form', post: @post, url: authors_post_url(@post) %>

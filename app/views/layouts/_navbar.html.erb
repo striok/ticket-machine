@@ -16,17 +16,25 @@
         <%= link_to 'Kontakt', contact_path, class: "nav-link #{yield(:contact_active)}" %>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Twój profil
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to 'Moje bilety', author_tickets_path, class: "dropdown-item #{yield(:tickets_active)}" %>
-          <%= link_to 'Posty', author_posts_path, class: "dropdown-item #{yield(:post_active)}" %>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      <% if !author_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Zaloguj', author_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+
+      <% if author_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Twój profil
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Moje bilety', authors_tickets_path, class: "dropdown-item #{yield(:tickets_active)}" %>
+            <%= link_to 'Posty', authors_posts_path, class: "dropdown-item #{yield(:post_active)}" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Wyloguj', destroy_author_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

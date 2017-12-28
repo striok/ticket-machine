@@ -1,4 +1,4 @@
-module Author
+module Authors
   class TicketsController < AuthorController
     before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 

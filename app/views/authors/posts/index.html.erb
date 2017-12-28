@@ -1,0 +1,22 @@
+<% provide(:page_title, 'Twoje artykuły') %>
+<% provide(:post_active, 'active') %>
+
+
+<div class="row">
+  <div class="space">
+    <%= link_to 'Nowy artykuł', new_authors_post_path, class:'btn btn-primary' %>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th colspan="4">
+        Tytuł
+      </th>
+    </tr>
+    <%= render @posts %>
+  </table>
+</div>
+
+
+
+
+

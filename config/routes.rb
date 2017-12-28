@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :authors
   root :to => "shop/posts#index"
 
-  namespace :author do
+  namespace :authors do
     resources :posts
     resources :tickets
   end
