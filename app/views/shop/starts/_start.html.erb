@@ -1,0 +1,18 @@
+<div class="parallax-image" style="background-image: url(<%= start.picture_url %>)">
+  <h1>
+    <%= start.title.upcase %> <br>
+    <% if start.features == "news" %>
+      <button type="button" class="btn btn-outline-light btn-pointer">SPRAWDŹ</button>
+    <% elsif start.features == "events" %>
+      <button type="button" class="btn btn-outline-light btn-pointer">PRZEGLĄDAJ</button>
+    <% elsif start.features == "join" %>
+      <button type="button" class="btn btn-light btn-pointer">ZAREJESTRUJ SIĘ</button>
+      /
+      <button type="button" class="btn btn-outline-light btn-pointer">ZALOGUJ</button>
+    <% elsif start.features == "search" %>
+      <div class="test">
+        <input class="form-control centered" type="text" placeholder="Szukaj">
+      </div>
+    <% end %>
+  </h1>
+</div>
