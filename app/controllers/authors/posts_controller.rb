@@ -4,8 +4,8 @@ module Authors
 
     # GET /posts
     # GET /posts.json
-    def index                               
-      @posts = Post.all
+    def index
+      @posts = Post.all.paginate(:page => params[:page], per_page: 5)
     end
 
     # GET /posts/1
@@ -39,11 +39,11 @@ module Authors
 
       respond_to do |format|
         if @post.save
-          format.html { redirect_to authors_post_path(@post), notice: 'Post was successfully created.' }
-          format.json { render :show, status: :created, location: @post }
+          format.html {redirect_to authors_post_path(@post), notice: 'Post was successfully created.'}
+          format.json {render :show, status: :created, location: @post}
         else
-          format.html { render :new }
-          format.json { render json: @post.errors, status: :unprocessable_entity }
+          format.html {render :new}
+          format.json {render json: @post.errors, status: :unprocessable_entity}
         end
       end
     end
@@ -53,11 +53,11 @@ module Authors
     def update
       respond_to do |format|
         if @post.update(post_params)
-          format.html { redirect_to authors_post_path(@post), notice: 'Post was successfully updated.' }
-          format.json { render :show, status: :ok, location: @post }
+          format.html {redirect_to authors_post_path(@post), notice: 'Post was successfully updated.'}
+          format.json {render :show, status: :ok, location: @post}
         else
-          format.html { render :edit }
-          format.json { render json: @post.errors, status: :unprocessable_entity }
+          format.html {render :edit}
+          format.json {render json: @post.errors, status: :unprocessable_entity}
         end
       end
     end
@@ -67,8 +67,8 @@ module Authors
     def destroy
       @post.destroy
       respond_to do |format|
-        format.html { redirect_to autors_post_url, notice: 'Post was successfully destroyed.' }
-        format.json { head :no_content }
+        format.html {redirect_to authors_post_path, notice: 'Post was successfully destroyed.'}
+        format.json {head :no_content}
       end
     end
 

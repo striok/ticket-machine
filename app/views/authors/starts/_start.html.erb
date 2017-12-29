@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to start.title, authors_start_path(start) %></td>
+  <td></td>
+  <td><%= link_to 'Edytuj', edit_authors_start_path(start), class: 'btn btn-sm btn-warning' %></td>
+  <td><%= link_to 'Usuń', authors_start_path(start), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+</tr>

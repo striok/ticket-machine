@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :authors
-  root :to => "shop/posts#index"
+  root :to => "shop/starts#index"
 
   namespace :authors do
     resources :posts do
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       put 'unpublish' => 'posts#unpublish', on: :member
     end
     resources :tickets
+    resources :starts
   end
 
   scope module: 'shop' do
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
     get 'contact' => 'pages#contact', as: :contact
     get 'posts' => 'posts#index', as: :posts
     get 'posts/:id' => 'posts#show', as: :post
+    get 'starts' => 'starts#index', as: :starts
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

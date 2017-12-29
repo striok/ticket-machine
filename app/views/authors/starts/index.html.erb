@@ -1,0 +1,25 @@
+<% provide(:page_title, 'Strona główna') %>
+<% provide(:start_page_active, 'active') %>
+
+<div class="starts-admin-space">
+  <div class="container">
+    <div class="row">
+      <div class="space">
+        <%= link_to 'Nowa strona główna', new_authors_start_path, class: 'btn btn-primary' %>
+      </div>
+      <table class="table table-striped">
+        <tr>
+          <th colspan="4">
+            Tytuł
+          </th>
+        </tr>
+        <%= render @starts %>
+      </table>
+    </div>
+    <div class="apple_pagination">
+      <%= will_paginate @starts, container: false %>
+    </div>
+  </div>
+</div>
+
+

@@ -1,10 +1,10 @@
 <% provide(:page_title, 'Twoje artykuły') %>
-<% provide(:post_active, 'active') %>
+<% provide(:author_post_active, 'active') %>
 
 
 <div class="row">
   <div class="space">
-    <%= link_to 'Nowy artykuł', new_authors_post_path, class:'btn btn-primary' %>
+    <%= link_to 'Nowy artykuł', new_authors_post_path, class: 'btn btn-primary' %>
   </div>
   <table class="table table-striped">
     <tr>
@@ -14,6 +14,9 @@
     </tr>
     <%= render @posts %>
   </table>
+</div>
+<div class="apple_pagination">
+  <%= will_paginate @posts, container: false %>
 </div>
 
 

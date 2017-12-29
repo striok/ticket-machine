@@ -1,0 +1,67 @@
+<%= form_for(start, url: url) do |f| %>
+  <% if start.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(start.errors.count, "error") %> prohibited this start from being saved:</h2>
+
+      <ul>
+        <% start.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-4">
+
+      <div class="card">
+        <div class="card-block">
+          <% if @start.new_record? %>
+            <h4 class="card-title">Nowy zdjęcie</h4>
+          <% else %>
+            <h4 class="card-title">
+              <b>Edytuj zdjęcie </b>
+              <span class="thin-text"><%= @start.title %></span>
+            </h4>
+          <% end %>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label 'Tytuł zdjęcia' %>
+              <%= f.text_field :title, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label 'URL obrazu' %>
+              <%= f.text_field :picture_url, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= f.label 'Typ' %>
+              <%= f.text_field :features, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="actions">
+              <%= f.submit "Zapisz", class: 'btn btn-success btn-block btn-pointer' %>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <%= link_to 'Wróć', authors_starts_path %>
+
+    </div>
+    <div class="col-md-8">
+      <div class="field">
+        <div class="parallax-image-static" style="background-image: url(<%= start.picture_url %>)">
+          <h1><%= start.title %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
