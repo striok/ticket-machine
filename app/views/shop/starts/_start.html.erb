@@ -1,14 +1,18 @@
 <div class="parallax-image" style="background-image: url(<%= start.picture_url %>)">
-  <h1>
+  <h1 class="parallax-center">
     <%= start.title.upcase %> <br>
     <% if start.features == "news" %>
-      <button type="button" class="btn btn-outline-light btn-pointer">SPRAWDŹ</button>
+      <%= link_to 'SPRAWDŹ', posts_path, class: "btn btn-outline-light btn-pointer" %>
     <% elsif start.features == "events" %>
-      <button type="button" class="btn btn-outline-light btn-pointer">PRZEGLĄDAJ</button>
+      <%= link_to 'PRZEGLĄDAJ', '#', class: "btn btn-outline-light btn-pointer" %>
     <% elsif start.features == "join" %>
-      <button type="button" class="btn btn-light btn-pointer">ZAREJESTRUJ SIĘ</button>
-      /
-      <button type="button" class="btn btn-outline-light btn-pointer">ZALOGUJ</button>
+      <% if !author_signed_in? %>
+        <%= link_to 'ZAREJESTRUJ SIĘ', new_author_registration_path, class: "btn btn-light btn-pointer" %>
+        /
+        <%= link_to 'ZALOGUJ', author_session_path, class: "btn btn-outline-light btn-pointer" %>
+      <% else %>
+        <%= link_to current_author.name, posts_path, class: "btn btn-outline-light btn-pointer" %>
+      <% end %>
     <% elsif start.features == "search" %>
       <div class="test">
         <input class="form-control centered" type="text" placeholder="Szukaj">

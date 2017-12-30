@@ -1,13 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <%= link_to 'Biletomat', root_path, class: "navbar-brand" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <%= link_to 'Sportomat', posts_path, class: "navbar-brand" %>
+  <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <%= link_to 'Aktualności', posts_path, class: "nav-link #{yield(:post_active)}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Wydarzenia', '#', class: "nav-link #{yield(:events_active)}" %>
       </li>
       <li class="nav-item">
         <%= link_to 'O nas', about_path, class: "nav-link #{yield(:about_active)}" %>
@@ -18,19 +21,23 @@
 
       <% if !author_signed_in? %>
         <li class="nav-item">
-          <%= link_to 'Zaloguj', author_session_path, class: "nav-link"%>
+          <%= link_to 'Zaloguj', author_session_path, class: "nav-link" %>
         </li>
       <% end %>
 
       <% if author_signed_in? %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Twój profil
+          <a class="nav-link dropdown-toggle author-nav" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag(current_author.gravatar_image_url) %>
+            <%= current_author.name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'Strona Główna', authors_starts_path, class: "dropdown-item #{yield(:start_page_active)}" %>
             <%= link_to 'Moje bilety', authors_tickets_path, class: "dropdown-item #{yield(:tickets_active)}" %>
-            <%= link_to 'Posty', authors_posts_path, class: "dropdown-item #{yield(:author_post_active)}" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Strona tytułowa', authors_starts_path, class: "dropdown-item #{yield(:start_page_active)}" %>
+            <%= link_to 'Artykuły', authors_posts_path, class: "dropdown-item #{yield(:author_post_active)}" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Konto', authors_account_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Wyloguj', destroy_author_session_path, method: :delete, class: "dropdown-item" %>
           </div>

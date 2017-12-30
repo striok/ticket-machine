@@ -15,7 +15,7 @@ module Authors
 
     # GET /posts/new
     def new
-      @post = Post.new
+      @post = current_author.posts.new
     end
 
     # GET /posts/1/edit
@@ -35,7 +35,7 @@ module Authors
     # POST /posts
     # POST /posts.json
     def create
-      @post = Post.new(post_params)
+      @post = current_author.posts.new(post_params)
 
       respond_to do |format|
         if @post.save
@@ -80,7 +80,7 @@ module Authors
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :description, :banner_image_url)
+      params.require(:post).permit(:title, :body, :description, :banner_image_url, :tag_list)
     end
   end
 

@@ -1,40 +1,8 @@
-.container.starts.index {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  margin-top: -20px;
+.space {
+  margin-bottom: 10px;
 }
 
-.parallax-image {
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-  display: table;
-  background-attachment: fixed;
-}
-
-.parallax-image-static {
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-  display: table;
-}
-
-h1 {
-  font-family: "Arial Black", "sans-serif";
-  font-size: 4em;
-  color: white;
-  margin: 0;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.starts-admin-space {
-  margin-top: 100px;
-}
-
-.starts.index {
+.posts.index {
   margin-top: 80px;
   .card {
     border: none;
@@ -81,7 +49,7 @@ h1 {
   }
 }
 
-.starts.edit, .starts.new {
+.posts.edit, .posts.new {
   .card {
     .card-block {
       background-color: $light-gray;
@@ -109,10 +77,13 @@ h1 {
   }
 }
 
-.starts.show {
+.posts.show {
   .author-bio {
+    border-top: 2px solid #ddd;
+    text-align: center;
     background-color: white;
     padding: 15px 45px;
+    padding-top: 60px;
     margin: 30px 0;
     img {
       border-radius: 50%;
@@ -131,27 +102,45 @@ h1 {
   }
 }
 
+.article {
+  padding: 20px;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.contents {
+  text-align: justify;
+}
+
 @media screen and (min-width: 34em) {
-  .starts.index .card {
+  .posts.index .card {
     height: 440px;
   }
 }
 
 /* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {
-  .starts.index .card {
+  .posts.index .card {
     height: 420px;
   }
 }
 
 /* Extra large. Above 75em (1200px) */
 @media screen and (min-width: 75em) {
-  .starts.index .card {
+  .posts.index .card {
     height: 415px;
   }
 }
 
-.centered {
-  width: 20%;
-  margin: 10px auto;
+.mce-widget.mce-notification.mce-notification-warning.mce-has-close.mce-in {
+  display: none;
+}
+
+.mce-tinymce.mce-container.mce-panel {
+  border-radius: 0.25rem;
+}
+
+iframe#post_body_ifr {
+  min-height: 340px;
+  max-height: 340px;
 }

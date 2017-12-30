@@ -1,8 +1,40 @@
-.space {
-  margin-bottom: 10px;
+.container.starts.index {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  margin-top: -20px;
 }
 
-.posts.index {
+.parallax-image {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+}
+
+.parallax-image-static {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  display: table;
+}
+
+.parallax-center {
+  font-family: "Arial Black", "sans-serif";
+  font-size: 4em;
+  color: white;
+  margin: 0;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.starts-admin-space {
+  margin-top: 100px;
+}
+
+.starts.index {
   margin-top: 80px;
   .card {
     border: none;
@@ -49,7 +81,7 @@
   }
 }
 
-.posts.edit, .posts.new {
+.starts.edit, .starts.new {
   .card {
     .card-block {
       background-color: $light-gray;
@@ -77,7 +109,7 @@
   }
 }
 
-.posts.show {
+.starts.show {
   .author-bio {
     background-color: white;
     padding: 15px 45px;
@@ -100,34 +132,26 @@
 }
 
 @media screen and (min-width: 34em) {
-  .posts.index .card {
+  .starts.index .card {
     height: 440px;
   }
 }
 
 /* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {
-  .posts.index .card {
+  .starts.index .card {
     height: 420px;
   }
 }
 
 /* Extra large. Above 75em (1200px) */
 @media screen and (min-width: 75em) {
-  .posts.index .card {
+  .starts.index .card {
     height: 415px;
   }
 }
 
-.mce-widget.mce-notification.mce-notification-warning.mce-has-close.mce-in {
-  display: none;
-}
-
-.mce-tinymce.mce-container.mce-panel {
-  border-radius: 0.25rem;
-}
-
-iframe#post_body_ifr {
-  min-height: 340px;
-  max-height: 340px;
+.centered {
+  width: 20%;
+  margin: 10px auto;
 }

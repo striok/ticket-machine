@@ -45,6 +45,12 @@
             </div>
           </li>
           <li class="list-group-item">
+            <div class="field">
+              <%= f.label 'Tagi' %>
+              <%= f.text_area :tag_list, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
             <div class="actions">
               <%= f.submit "Zapisz", class: 'btn btn-success btn-block btn-pointer' %>
             </div>
