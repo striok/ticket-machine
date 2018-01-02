@@ -29,15 +29,19 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle author-nav" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag(current_author.gravatar_image_url) %>
-            <%= current_author.name %>
+            <%= current_author.display_name %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to number_to_currency(current_author.money, unit: "zł", separator: ",", delimiter: "", format: "%n %u"), '#', class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
             <%= link_to 'Moje bilety', authors_tickets_path, class: "dropdown-item #{yield(:tickets_active)}" %>
+            <% if current_author.admin? %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'Strona tytułowa', authors_starts_path, class: "dropdown-item #{yield(:start_page_active)}" %>
+              <%= link_to 'Artykuły', authors_posts_path, class: "dropdown-item #{yield(:author_post_active)}" %>
+            <% end %>
             <div class="dropdown-divider"></div>
-            <%= link_to 'Strona tytułowa', authors_starts_path, class: "dropdown-item #{yield(:start_page_active)}" %>
-            <%= link_to 'Artykuły', authors_posts_path, class: "dropdown-item #{yield(:author_post_active)}" %>
-            <div class="dropdown-divider"></div>
-            <%= link_to 'Konto', authors_account_path, class: "dropdown-item" %>
+            <%= link_to 'Konto', authors_account_path, class: "dropdown-item #{yield(:author_settings_active)}" %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Wyloguj', destroy_author_session_path, method: :delete, class: "dropdown-item" %>
           </div>

@@ -1,0 +1,69 @@
+.settings-space {
+  margin-bottom: 20px;
+}
+
+.btn-space {
+  margin-bottom: 10px;
+}
+
+.settings-title {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.money {
+  text-align: center;
+  font-weight: 700;
+}
+
+.ti {
+  margin-top: 40px;
+}
+
+.term {
+  padding: 60px;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
+  height: 400px;
+  margin-bottom: 20px;
+  background-color: white;
+  .card-topper {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .card-block {
+    padding: 10px;
+    .card-title {
+      font-size: 1.3rem;
+      margin-bottom: 0;
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+    .tags {
+      margin-bottom: 0;
+      a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+      }
+    }
+    .published-date {
+      font-size: 0.8rem;
+      color: #787878;
+      font-weight: 300;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .card-text {
+      font-size: 0.9rem;
+      color: black;
+    }
+
+  }
+}

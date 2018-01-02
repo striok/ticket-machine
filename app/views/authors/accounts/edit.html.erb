@@ -1,79 +1,164 @@
-<div class="row">
-  <!-- Basic info section -->
-  <%= form_tag authors_info_path, method: :put do %>
-    <%= fields_for :author do |f| %>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-block">
-            <div class="card-title">
-              Basic info
+<% provide(:author_settings_active, 'active') %>
+<% provide(:page_title, 'Ustawienia konta') %>
+
+<div class="col-md-12 bottom-space">
+  <div class="row settings-space">
+    <ul id="tabsJustified" class="nav nav-tabs">
+      <li class="nav-item">
+        <a href="" data-target="#settings" data-toggle="tab" class="nav-link small text-uppercase active">Ustawienia</a>
+      </li>
+      <li class="nav-item">
+        <a href="" data-target="#payment" data-toggle="tab" class="nav-link small text-uppercase">Płatności</a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="tabsJustifiedContent" class="tab-content">
+    <div id="settings" class="tab-pane fade active show">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <%= form_tag authors_info_path, method: :put do %>
+              <%= fields_for :author do |f| %>
+                <div class="card">
+                  <div class="card-block">
+                    <div class="card-title">
+                      Podstawowe informacje
+                    </div>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class='list-group-item'>
+                      <h3 style="display: inline-block">Gravatar:</h3> <%= image_tag(current_author.gravatar_image_url) %>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="field">
+                        <%= f.label :name %>
+                        <%= f.text_field :name, value: current_author.name, class: 'form-control' %>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="field">
+                        <%= f.label :email %>
+                        <%= f.text_field :email, value: current_author.email, class: 'form-control' %>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="field">
+                        <%= f.label :bio %>
+                        <%= f.text_area :bio, value: current_author.bio, class: 'form-control' %>
+                      </div>
+                    </li>
+                    <li class='list-group-item'>
+                      <%= f.submit "Zaktualizuj", class: 'btn btn-primary' %>
+                    </li>
+                  </ul>
+                </div>
+                </div>
+              <% end %>
+            <% end %>
+            <div class="col-md-6">
+              <%= form_tag authors_change_password_path, method: :put do %>
+                <%= fields_for :author do |f| %>
+
+                  <div class="card">
+                    <div class="card-block">
+                      <div class="card-title">
+                        Zmień hasło
+                      </div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <div class="field">
+                          <%= f.label 'Obecne hasło' %>
+                          <%= f.password_field :current_password, class: 'form-control' %>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="field">
+                          <%= f.label 'Nowe hasło' %>
+                          <%= f.password_field :new_password, class: 'form-control' %>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="field">
+                          <%= f.label 'Powtórz hasło' %>
+                          <%= f.password_field :new_password_confirmation, class: 'form-control' %>
+                        </div>
+                      </li>
+                      <li class='list-group-item'>
+                        <%= f.submit "Zmień hasło", class: 'btn btn-warning' %>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+                <% end %>
+              <% end %>
+              </div>
+      </div>
+    </div>
+
+
+    <div id="payment" class="tab-pane fade">
+      <div class="col-xl-12">
+        <div class="row settings-title">
+          <h2>Dodaj środki</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="row">
+              <h3>Doładowanie</h3>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+
+                <div class="row">
+                  <%= link_to '25 zł', authors_add_money_path(@invoice, :amount => 25), method: :put, class: 'btn btn-success btn-pointer btn-max btn-space' %>
+                </div>
+                <div class="row">
+                  <%= link_to '50 zł', authors_add_money_path(@invoice, :amount => 50), method: :put, class: 'btn btn-success btn-pointer btn-max btn-space' %>
+                </div>
+                <div class="row">
+                  <%= link_to '100 zł', authors_add_money_path(@invoice, :amount => 100), method: :put, class: 'btn btn-success btn-pointer btn-max btn-space' %>
+                </div>
+                <div class="row">
+                  <%= link_to '200 zł', authors_add_money_path(@invoice, :amount => 200), method: :put, class: 'btn btn-success btn-pointer btn-max btn-space' %>
+                </div>
+              </div>
             </div>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class='list-group-item'>
-              <%= image_tag(current_author.gravatar_image_url) %>
-            </li>
-            <li class="list-group-item">
-              <div class="field">
-                <%= f.label :name %>
-                <%= f.text_field :name, value: current_author.name, class: 'form-control' %>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-12">
+                <h3 class="money ti">Stan
+                  konta: <%= number_to_currency(current_author.money, unit: "zł", separator: ",", delimiter: "", format: "%n %u") %></h3>
               </div>
-            </li>
-            <li class="list-group-item">
-              <div class="field">
-                <%= f.label :email %>
-                <%= f.text_field :email, value: current_author.email, class: 'form-control' %>
+            </div>
+            <div class="row term">
+              <div class="row">
+                <h3 class="money">Warunki płatności</h3>
               </div>
-            </li>
-            <li class="list-group-item">
-              <div class="field">
-                <%= f.label :bio %>
-                <%= f.text_area :bio, value: current_author.bio, class: 'form-control' %>
+              <div class="row">
+                <p class="contents">Selfies truffaut bespoke, art party organic kale chips bushwick. Taxidermy heirloom
+                  brunch hot chicken
+                  four loko chillwave meditation tote bag retro hell of seitan pour-over kale chips offal.
+
+                  Chillwave butcher portland, viral salvia humblebrag sustainable ramps normcore single-origin coffee
+                  echo
+                  park DIY. Ugh leggings master cleanse disrupt.</p>
+                <p class="contents">Meggings umami woke biodiesel. Vice normcore deep v irony.</p>
+                <p class="contents">Kombucha vexillologist narwhal microdosing af try-hard, venmo 90's hashtag snackwave
+                  la croix. Forage
+                  ramps chia taxidermy shaman green juice quinoa cronut pitchfork hell of four dollar toast hella
+                  mlkshk.</p>
+                <p class="contents">Roof party pitchfork taxidermy squid. Live-edge subway tile austin retro
+                  lumbersexual photo booth</p>
+                <p class="contents">Bitters tattooed skateboard tote bag.</p>
               </div>
-            </li>
-            <li class='list-group-item'>
-              <%= f.submit "Update info", class: 'btn btn-primary' %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-  <!-- Change password section -->
-  <%= form_tag authors_change_password_path, method: :put do %>
-    <%= fields_for :author do |f| %>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-block">
-            <div class="card-title">
-              Change password
             </div>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <div class="field">
-                <%= f.label :current_password %>
-                <%= f.password_field :current_password, class: 'form-control' %>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="field">
-                <%= f.label :new_password %>
-                <%= f.password_field :new_password, class: 'form-control' %>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="field">
-                <%= f.label :new_password_confirmation %>
-                <%= f.password_field :new_password_confirmation, class: 'form-control' %>
-              </div>
-            </li>
-            <li class='list-group-item'>
-              <%= f.submit "Change password", class: 'btn btn-warning' %>
-            </li>
-          </ul>
         </div>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 </div>
+

@@ -29,6 +29,14 @@ module Authors
       redirect_to authors_account_path
     end
 
+    def add_money
+      amount = params[:amount]
+      author = current_author
+      author.money = author.money + Integer(amount)
+      author.save()
+      redirect_to authors_account_path
+    end
+
     private
 
     def author_info_params
@@ -38,6 +46,5 @@ module Authors
     def author_password_params
       params.require(:author).permit(:current_password, :new_password, :new_password_confirmation)
     end
-
   end
 end
