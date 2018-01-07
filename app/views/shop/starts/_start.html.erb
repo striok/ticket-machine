@@ -4,7 +4,7 @@
     <% if start.features == "news" %>
       <%= link_to 'SPRAWDŹ', posts_path, class: "btn btn-outline-light btn-pointer" %>
     <% elsif start.features == "events" %>
-      <%= link_to 'PRZEGLĄDAJ', '#', class: "btn btn-outline-light btn-pointer" %>
+      <%= link_to 'PRZEGLĄDAJ', events_path, class: "btn btn-outline-light btn-pointer" %>
     <% elsif start.features == "join" %>
       <% if !author_signed_in? %>
         <%= link_to 'ZAREJESTRUJ SIĘ', new_author_registration_path, class: "btn btn-light btn-pointer" %>

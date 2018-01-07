@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to event.name, authors_event_path(event) %></td>
+  <td></td>
+  <td><%= link_to 'Edytuj', edit_authors_event_path(event), class: 'btn btn-sm btn-warning' %></td>
+  <td><%= link_to 'Usuń', authors_event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+</tr>

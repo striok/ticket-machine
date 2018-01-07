@@ -1,0 +1,4 @@
+<% provide(:page_title, "Edytuj #{@event.name}") %>
+<% provide(:post_active, 'active') %>
+
+<%= render 'form', event: @event, url: authors_event_url(@event) %>

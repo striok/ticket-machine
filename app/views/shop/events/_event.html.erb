@@ -1,0 +1,35 @@
+<div class='col-sm-6 col-lg-4'>
+  <div class="card">
+    <%= link_to event do %>
+      <div class="card-topper" style='background-image: url(<%= event.event_picture_url %>);'></div>
+    <% end %>
+    <div class="card-block">
+      <h4 class="card-title"><%= link_to event.name, event %></h4>
+      <p class='tags'><%= raw event.tags.map {|t| link_to t.name, events_path(tag: t.name)}.join(', ') %></p>
+      <div class="row">
+        <div class="col-lg-6">
+          <% if (I18n.l event.date, :format => "%Y-%m-%d").to_s == Date.current.to_s %>
+            <span class='tags'>Cena: <%= number_to_currency(event.price * 1.2, unit: "zł", separator: ",", delimiter: "", format: "%n %u") %></span>
+          <% else %>
+            <span class='tags'>Cena: <%= number_to_currency(event.price, unit: "zł", separator: ",", delimiter: "", format: "%n %u") %></span>
+          <% end %>
+        </div>
+        <div class="col-lg-6">
+          <span class='tags'>
+            Dla dorosłych:
+            <% if event.adult? %>
+              Tak
+            <% else %>
+              Nie
+            <% end %>
+          </span>
+        </div>
+      </div>
+
+      <h6 class="published-date">Data: <%= I18n.l event.date, :format => "%d-%m-%Y %H:%M" %></h6>
+      <%= link_to event do %>
+        <p class="card-text"><%= truncate(event.description.html_safe, length: 100) %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

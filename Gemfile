@@ -42,6 +42,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'annotate'
 gem 'will_paginate', '~> 3.1.0'
 gem 'acts-as-taggable-on', '~> 5.0'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

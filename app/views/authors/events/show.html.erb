@@ -1,0 +1,37 @@
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @event.address %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @event.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @event.quantity %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= @event.event_picture_url %>
+</p>
+
+<%= link_to 'Edit', edit_authors_event_path(@event) %> |
+<%= link_to 'Back', authors_events_path %>

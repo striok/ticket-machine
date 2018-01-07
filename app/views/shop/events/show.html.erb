@@ -1,0 +1,172 @@
+<% provide(:page_title, @event.name) %>
+<% provide(:events_active, 'active') %>
+<% %>
+
+<script>
+  $(document).ready(function () {
+    var count = 0;
+
+    $("#increase").click(function () {
+      count++;
+      console.log('hallo', count);
+      if (count >= 0 && count < 5) {
+        $('#decrease').attr("disabled", false);
+        $('#increase').attr("disabled", false);
+        $('#buyTicket').attr("disabled", false);
+      } else {
+        $('#increase').attr("disabled", true);
+        count = 5;
+      }
+
+      $("#counter").val(count + " szt.");
+    });
+
+    $("#decrease").click(function () {
+      count--;
+      if (count > 0 && count <= 5) {
+        $('#decrease').attr("disabled", false);
+        $('#increase').attr("disabled", false)
+      } else {
+        $('#decrease').attr("disabled", true);
+        $('#buyTicket').attr("disabled", true);
+        count = 0;
+      }
+      $("#counter").val(count + " szt.");
+    })
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle="tooltip-birth-nil"]').tooltip('show');
+      $('[data-toggle="tooltip-warn"]').tooltip('show');
+    })
+  });
+</script>
+
+<div class="row event-title">
+  <div class="col-md-4">
+    <img class="img-fluid" src=<%= @event.event_picture_url %>/>
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12">
+        <h5>BILETY NA WYDARZENIE</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2><%= @event.name.upcase %></h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row event-content">
+  <div class="col-md-8">
+    <div class="row">
+      <h5>OPIS</h5>
+    </div>
+    <div class="row">
+      <span class="event-description"><%= @event.description %></span>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="row">
+      <h5>PODSUMOWANIE</h5>
+    </div>
+    <div class="row">
+      <h6>TERMIN</h6>
+    </div>
+    <div class="row">
+      <span class="event-summary"><%= I18n.l @event.date, :format => "%d-%m-%Y %H:%M" %></span>
+    </div>
+    <div class="row">
+      <h6>ADRES</h6>
+    </div>
+    <div class="row">
+      <span class="event-summary"><%= @event.address %></span>
+    </div>
+    <div class="row">
+      <h6>CENA</h6>
+    </div>
+    <div class="row">
+      <span class="event-summary"><%= number_to_currency(@event.price, unit: "zł", separator: ",", delimiter: "", format: "%n %u") %>
+        <span class="event-day-info">(w dniu wydarzenia <span class="event-day-info-price"><%= number_to_currency(@event.price * 1.2, unit: "zł", separator: ",", delimiter: "", format: "%n %u") %></span>)</span></span>
+    </div>
+    <div class="row">
+      <h6>ILOŚĆ MIEJSC</h6>
+    </div>
+    <div class="row event-quantity" style="<%= 'background-color: #e1ffde' if @event.quantity > 10 %>">
+      <div class="col-md-12">
+        <div class="row">
+      <span style="margin-top: -7px">Dostępna do wyczerpania,
+        najpóźniej do</span>
+        </div>
+        <div class="row">
+          <span><%= I18n.l @event.date, :format => "%d-%m-%Y %H:%M" %></span>
+        </div>
+        <div class="row">
+          <span style="margin-bottom: 10px">Dostępne <%= @event.quantity %> miejsc</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h6>DLA DOROSŁYCH</h6>
+    </div>
+    <div class="row">
+      <span class="event-summary"><% if @event.adult? %>
+              Tak
+            <% else %>
+              Nie
+            <% end %>
+      </span>
+    </div>
+    <div class="row">
+      <h6>ILOŚĆ SZTUK</h6>
+    </div>
+    <% if @event.quantity != 0 %>
+      <div class="row">
+        <div class="col-md-4">
+          <input id="counter" type="text" class="form-control" id="quantity" aria-describedby="quantity" value="0 szt." placeholder="0 szt." disabled="true">
+        </div>
+        <div class="col-md-4">
+          <button id="decrease" class="btn btn-danger btn-max btn-pointer" disabled="true">-</button>
+        </div>
+        <div class="col-md-4">
+          <button id="increase" class="btn btn-success btn-max btn-pointer">+</button>
+        </div>
+      </div>
+    <% end %>
+    <div class="row">
+      <% if ((Date.new(@event.date.year, @event.date.mon, @event.date.day).yday) - (Date.current.yday) <= 31 && (Date.new(@event.date.year, @event.date.mon, @event.date.day).yday) - (Date.current.yday) >= 0) %>
+        <% if @event.quantity != 0 %>
+          <% if current_author.birth_date %>
+            <% if @event.adult && (Date.current.year - (I18n.l current_author.birth_date, :format => "%Y").to_i) >= 18 %>
+              <button id="buyTicket" class="btn btn-success btn-buy btn-max btn-pointer" disabled="true" data-placement="bottom" title="Kup bilet na wydarzenie dla dorosłych" data-toggle="tooltip">KUP
+                BILET
+              </button>
+            <% elsif @event.adult && (Date.current.year - (I18n.l current_author.birth_date, :format => "%Y").to_i) < 18 %>
+              <button id="warnTicket" class="btn btn-warning btn-buy btn-max btn-pointer" data-placement="bottom" title="Nie masz wystarczającej ilości lat" data-toggle="tooltip-warn">KUP
+                BILET
+              </button>
+            <% else %>
+              <button id="buyTicket" class="btn btn-success btn-buy btn-max btn-pointer" disabled="true" data-placement="bottom" title="Kup bilet na wydarzenie" data-toggle="tooltip">KUP
+                BILET
+              </button>
+            <% end %>
+          <% end %>
+          <% if current_author.birth_date == nil %>
+            <button class="btn btn-danger btn-buy btn-max btn-pointer" data-placement="bottom" title="Ustaw date urodzenia (w profilu), aby mieć możliwość zakupu biletu!" data-toggle="tooltip-birth-nil">KUP
+              BILET
+            </button>
+          <% end %>
+        <% else %>
+          <h3 class="lack-ticket">Brak biletów na wydarzenie</h3>
+        <% end %>
+      <% elsif ((Date.new(@event.date.year, @event.date.mon, @event.date.day).yday) - (Date.current.yday) < 0) %>
+        <span>Wydarzenie już się odbyło!</span>
+      <% else %>
+        <span>Bilety będą dostępne w sprzedaży od dnia</span>
+        <span><%= I18n.l @event.date.prev_month(), :format => "%d-%m-%Y" %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

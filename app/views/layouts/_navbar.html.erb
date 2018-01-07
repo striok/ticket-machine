@@ -10,7 +10,7 @@
         <%= link_to 'Aktualności', posts_path, class: "nav-link #{yield(:post_active)}" %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Wydarzenia', '#', class: "nav-link #{yield(:events_active)}" %>
+        <%= link_to 'Wydarzenia', events_path, class: "nav-link #{yield(:events_active)}" %>
       </li>
       <li class="nav-item">
         <%= link_to 'O nas', about_path, class: "nav-link #{yield(:about_active)}" %>
@@ -39,6 +39,7 @@
               <div class="dropdown-divider"></div>
               <%= link_to 'Strona tytułowa', authors_starts_path, class: "dropdown-item #{yield(:start_page_active)}" %>
               <%= link_to 'Artykuły', authors_posts_path, class: "dropdown-item #{yield(:author_post_active)}" %>
+              <%= link_to 'Wydarzenia', authors_events_path, class: "dropdown-item #{yield(:author_events_active)}" %>
             <% end %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Konto', authors_account_path, class: "dropdown-item #{yield(:author_settings_active)}" %>

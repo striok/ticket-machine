@@ -40,7 +40,7 @@ module Authors
     private
 
     def author_info_params
-      params.require(:author).permit(:name, :email, :bio)
+      params.require(:author).permit(:name, :email, :bio, :birth_date)
     end
 
     def author_password_params

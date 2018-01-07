@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
     resources :tickets
     resources :starts
+    resources :events
   end
 
   scope module: 'shop' do
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
     get 'posts' => 'posts#index', as: :posts
     get 'posts/:id' => 'posts#show', as: :post
     get 'starts' => 'starts#index', as: :starts
+    get 'events' => 'events#index', as: :events
+    get 'events/:id' => 'events#show', as: :event
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,0 +1,61 @@
+<% provide(:page_title, 'Wydarzenia') %>
+<% provide(:events_active, 'active') %>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="row settings-space">
+      <ul id="tabsJustified" class="nav nav-tabs">
+        <li class="nav-item">
+          <a href="" data-target="#events" data-toggle="tab" class="nav-link small text-uppercase active">Wydarzenia</a>
+        </li>
+        <% if current_author && current_author.admin? %>
+          <li class="nav-item">
+            <a href="" data-target="#archives" data-toggle="tab" class="nav-link small text-uppercase">Archiwum</a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="input-group date picker">
+      <input type="text" data-provide='datepicker' placeholder="Podaj date">
+      <div class="input-group-addon">
+        <span class="fa fa-calendar-check-o"></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Podaj nazwe wydarzenia" aria-label="Wszukaj Wydarzenia" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary btn-pointer" type="button">Szukaj</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div id="tabsJustifiedContent" class="tab-content">
+    <div id="events" class="tab-pane fade active active show">
+      <div class="row">
+        <%= render @events %>
+      </div>
+      <div class="apple_pagination">
+        <div class="col-xl-12">
+          <%= will_paginate @events, container: false %>
+        </div>
+      </div>
+    </div>
+    <div id="archives" class="tab-pane fade">
+      <div class="row">
+        <%= render @archives %>
+      </div>
+      <div class="apple_pagination">
+        <div class="col-xl-12">
+          <%= will_paginate @archives, container: false %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,101 @@
+<%= form_for(event, url: url) do |f| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-4">
+
+      <div class="card">
+        <% if @event.new_record? %>
+          <h4 class="card-title">Nowy artukuł</h4>
+        <% else %>
+          <h4 class="card-title">
+            <b>Edytuj </b>
+            <span class="thin-text"><%= @event.name %></span>
+          </h4>
+        <% end %>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'Tytuł' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'Adres wydarzenia' %>
+            <%= f.text_field :address, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'Opis' %>
+            <%= f.text_area :description, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'cena' %>
+            <%= f.text_field :price, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'data' %>
+            <%= f.datetime_select :date, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'quantity' %>
+            <%= f.text_field :quantity, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'Tagi' %>
+            <%= f.text_area :tag_list, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'event_picture_url' %>
+            <%= f.text_field :event_picture_url, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label 'Dla dorosłych' %>
+            <%= f.text_field :adult, class: 'form-control' %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="actions">
+            <%= f.submit "Zapisz", class: 'btn btn-success btn-block btn-pointer' %>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <% if @event.persisted? %>
+      <%= link_to 'Pokaż', @event %> |
+    <% end %>
+    <%= link_to 'Wróć', authors_events_path %>
+
+  </div>
+  <div class="col-md-8">
+
+  </div>
+
+<% end %>
+

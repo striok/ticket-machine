@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102164645) do
+ActiveRecord::Schema.define(version: 20180107125622) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -29,8 +29,23 @@ ActiveRecord::Schema.define(version: 20180102164645) do
     t.text "bio"
     t.boolean "admin", default: false
     t.decimal "money", precision: 8, scale: 2, default: "0.0"
+    t.datetime "birth_date"
     t.index ["email"], name: "index_authors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "address"
+    t.decimal "price"
+    t.text "description"
+    t.datetime "date"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "event_picture_url"
+    t.integer "purchase_counter", default: 0
+    t.boolean "adult", default: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

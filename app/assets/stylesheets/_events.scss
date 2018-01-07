@@ -1,0 +1,47 @@
+.event-title {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.event-summary {
+  margin-bottom: 10px;
+  margin-top: -8px;
+}
+
+.btn-buy {
+  margin-top: 10px;
+}
+
+.container.events.show {
+  background-color: white;
+}
+
+.event-content {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.event-quantity {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.event-day-info {
+  font-style: italic;
+}
+
+.event-day-info-price {
+  font-weight: 700;
+}
+
+.lack-ticket {
+  color: red;
+}
+
+.event-description {
+  padding: 10px;
+  padding-right: 30px;
+  text-align: justify;
+}
+

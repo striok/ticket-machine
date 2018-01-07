@@ -16,6 +16,9 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+
 
 document.addEventListener("turbolinks:load", function () {
   tinymce.remove();
@@ -26,3 +29,19 @@ document.addEventListener("turbolinks:load", function () {
 
   });
 });
+
+$.fn.datepicker.dates['en'] = {
+  days: ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"],
+  daysShort: ["Nie", "Pon", "Wto", "Śro", "Czw", "Pia", "Sob"],
+  daysMin: ["Ni", "Pn", "Wt", "Śr", "Cz", "Pt", "So"],
+  months: ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"],
+  monthsShort: ["Sty", "Lut", "Mar", "Kwi", "Maj", "Cze", "Lip", "Sie", "Wrz", "Paź", "Lis", "Gru"],
+  today: "Dziś",
+  clear: "Wyczyść",
+  format: "mm/dd/yyyy",
+  titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+  weekStart: 0,
+  todayHighlight: true
+};
+
+
