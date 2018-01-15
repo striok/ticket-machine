@@ -14,7 +14,9 @@
 #
 
 class Ticket < ApplicationRecord
-  
+
   scope :most_recent, -> { order(id: :desc)}
+  belongs_to :author, :optional => true
+  belongs_to :event
 
 end

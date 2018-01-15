@@ -1,0 +1,91 @@
+<% provide(:page_title, "Kup bilet") %>
+<% provide(:events_active, 'active') %>
+
+<div class="row">
+  <div class="col-md-9">
+    <div class="row">
+      <h1>Kupujesz bilet na wydarzenie - <span class="ticket-title"><%= params[:event_name] %></span></h1>
+    </div>
+    <div class="row">
+      <h3>Miejsce - <%= params[:event_address] %></h3>
+    </div>
+    <div class="row">
+      <h3>Data - <%= I18n.l params[:event_date].to_time, :format => "%d-%m-%Y %H:%M" %></h3>
+    </div>
+    <div class="row">
+      <h3>Ilości - <%= params[:ticket_counter] %> szt.</h3>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <img class="img-fluid" src=<%= params[:event_picture] %>/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="row">
+      <h3>Twoje środki</h3>
+    </div>
+    <div class="row">
+      <%= number_to_currency(current_author.money, unit: "zł", separator: ",", delimiter: "", format: "%n %u") %>
+    </div>
+    <div class="row">
+      <h3>Koszt biletów</h3>
+    </div>
+    <div class="row">
+      <% if (I18n.l params[:event_date].to_date, :format => "%Y-%m-%d").to_s == Date.current.to_s %>
+        <%
+          @today_price = (params[:event_price].to_f * 1.2)
+          @sum_price = @today_price * params[:ticket_counter].to_i
+        %>
+        <span> <%= params[:ticket_counter].to_s + ' szt. x ' + number_to_currency(@today_price,
+                                                                                  unit: "zł", separator: ",", delimiter: "", format: "%n %u").to_s + ' = ' %>
+          <%= number_to_currency(@sum_price,
+                                 unit: "zł", separator: ",", delimiter: "", format: "%n %u") %></span>
+      <% else %>
+        <%
+          @today_price = params[:event_price].to_f
+          @sum_price = @today_price * params[:ticket_counter].to_i
+        %>
+        <span><%= params[:ticket_counter].to_s + ' x ' + @today_price.to_s + ' = ' %><%= number_to_currency(@sum_price,
+                                                                                                            unit: "zł", separator: ",", delimiter: "", format: "%n %u") %></span>
+      <% end %>
+    </div>
+    <div class="row">
+      <% if (current_author.money - @sum_price) >= 0 %>
+        <div class="col-md-12">
+          <%= button_to 'Kup bilety', authors_tickets_path,
+                        params: {event_id: params[:event_id], user_id: params[:user_id], ticket_counter: params[:ticket_counter]}, method: :post, class: "btn btn-success btn-pointer btn-max" %>
+
+        </div>
+
+      <% else %>
+        <div class="col-md-12">
+          <%= link_to 'Doładuj konto', authors_account_path, class: "btn btn-warning btn-pointer btn-max" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <h3>Opis</h3>
+    </div>
+    <div class="row">
+      <p class="ticket-description"><%= params[:event_description] %></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+
+  <span>Event id: <%= params[:event_id] %></span>
+
+
+  <span>Event ticket counter: </span>
+  <span>Current author: <%= params[:user_id] %></span>
+
+
+</div>
+

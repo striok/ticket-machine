@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
   PER_PAGE = 3
+  has_many :tickets
 
   scope :soon, -> {where("date >= '#{Date.today}'").order(date: :asc)}
   scope :archive, -> {where("date < '#{Date.today}'").order(date: :asc)}

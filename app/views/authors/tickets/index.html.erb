@@ -8,7 +8,11 @@
 </div>
 
 <div class="row">
-  <% @tickets.each do |ticket| %>
-    <%= render ticket %>
+  <% if @tickets.length != 0 %>
+    <% @tickets.each do |ticket| %>
+      <%= render ticket %>
+    <% end %>
+  <% else %>
+    <h2>Brak zakupionych biletów</h2>
   <% end %>
 </div>

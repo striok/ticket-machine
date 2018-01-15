@@ -6,9 +6,9 @@
   $(document).ready(function () {
     var count = 0;
 
+
     $("#increase").click(function () {
       count++;
-      console.log('hallo', count);
       if (count >= 0 && count < 5) {
         $('#decrease').attr("disabled", false);
         $('#increase').attr("disabled", false);
@@ -17,6 +17,7 @@
         $('#increase').attr("disabled", true);
         count = 5;
       }
+
 
       $("#counter").val(count + " szt.");
     });
@@ -32,7 +33,7 @@
         count = 0;
       }
       $("#counter").val(count + " szt.");
-    })
+    });
 
     $(function () {
       $('[data-toggle="tooltip"]').tooltip();
@@ -124,7 +125,9 @@
     </div>
     <% if @event.quantity != 0 %>
       <div class="row">
+
         <div class="col-md-4">
+          <div class="test"></div>
           <input id="counter" type="text" class="form-control" id="quantity" aria-describedby="quantity" value="0 szt." placeholder="0 szt." disabled="true">
         </div>
         <div class="col-md-4">
@@ -138,25 +141,29 @@
     <div class="row">
       <% if ((Date.new(@event.date.year, @event.date.mon, @event.date.day).yday) - (Date.current.yday) <= 31 && (Date.new(@event.date.year, @event.date.mon, @event.date.day).yday) - (Date.current.yday) >= 0) %>
         <% if @event.quantity != 0 %>
-          <% if current_author.birth_date %>
-            <% if @event.adult && (Date.current.year - (I18n.l current_author.birth_date, :format => "%Y").to_i) >= 18 %>
-              <button id="buyTicket" class="btn btn-success btn-buy btn-max btn-pointer" disabled="true" data-placement="bottom" title="Kup bilet na wydarzenie dla dorosłych" data-toggle="tooltip">KUP
-                BILET
-              </button>
-            <% elsif @event.adult && (Date.current.year - (I18n.l current_author.birth_date, :format => "%Y").to_i) < 18 %>
-              <button id="warnTicket" class="btn btn-warning btn-buy btn-max btn-pointer" data-placement="bottom" title="Nie masz wystarczającej ilości lat" data-toggle="tooltip-warn">KUP
-                BILET
-              </button>
-            <% else %>
-              <button id="buyTicket" class="btn btn-success btn-buy btn-max btn-pointer" disabled="true" data-placement="bottom" title="Kup bilet na wydarzenie" data-toggle="tooltip">KUP
-                BILET
-              </button>
+          <% if !author_signed_in? %>
+            <%= link_to 'Zaloguj się, aby kupić bilet', author_session_path, class: "btn btn-warning btn-buy btn-max btn-pointer" %>
+          <% else %>
+            <% if current_author.birth_date %>
+              <% if @event.adult && (Date.current.year - (I18n.l current_author.birth_date, :format => "%Y").to_i) >= 18 %>
+                <%= button_to 'Kup bilet na wydarzenie', authors_summary_path,
+                              params: {body: 'super test', event_id: @event, event_name: @event.name,
+                                       event_description: @event.description, event_address: @event.address,
+                                       event_date: @event.date, event_picture: @event.event_picture_url, user_id: current_author.id, event_price: @event.price, ticket_counter: 1}, method: :post, class: "btn btn-success btn-buy btn-max btn-pointer" %>
+              <% elsif @event.adult && (Date.current.year - (I18n.l current_author.birth_date, :format => "%Y").to_i) < 18 %>
+                <button id="warnTicket" class="btn btn-warning btn-buy btn-max btn-pointer" data-placement="bottom" title="Nie masz wystarczającej ilości lat" data-toggle="tooltip-warn">KUP
+                  BILET
+                </button>
+              <% else %>
+                <%= button_to 'Kup bilet na wydarzenie', authors_summary_path,
+                              params: {body: 'super test', event_id: @event, event_name: @event.name,
+                                       event_description: @event.description, event_address: @event.address,
+                                       event_date: @event.date, event_picture: @event.event_picture_url, user_id: current_author.id, event_price: @event.price, ticket_counter: 1}, method: :post, class: "btn btn-success btn-buy btn-max btn-pointer" %>
+              <% end %>
             <% end %>
-          <% end %>
-          <% if current_author.birth_date == nil %>
-            <button class="btn btn-danger btn-buy btn-max btn-pointer" data-placement="bottom" title="Ustaw date urodzenia (w profilu), aby mieć możliwość zakupu biletu!" data-toggle="tooltip-birth-nil">KUP
-              BILET
-            </button>
+            <% if current_author.birth_date == nil %>
+              <%= link_to 'Ustaw date urodzenia', authors_account_path, class: "btn btn-danger btn-buy btn-max btn-pointer" %>
+            <% end %>
           <% end %>
         <% else %>
           <h3 class="lack-ticket">Brak biletów na wydarzenie</h3>
@@ -167,6 +174,8 @@
         <span>Bilety będą dostępne w sprzedaży od dnia</span>
         <span><%= I18n.l @event.date.prev_month(), :format => "%d-%m-%Y" %></span>
       <% end %>
+
+
     </div>
   </div>
 </div>

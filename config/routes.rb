@@ -5,9 +5,12 @@ Rails.application.routes.draw do
 
   namespace :authors do
     get '/account' => 'accounts#edit', as: :account
+
     put '/info' => 'accounts#update_info', as: :info
     put '/change_password' => 'accounts#change_password', as: :change_password
     put '/add_money' => 'accounts#add_money', as: :add_money
+    post '/tickets/summary' => 'tickets#buy', as: :summary
+    post '/buy' => 'tickets#index', as: :buy
     resources :posts do
       put 'publish' => 'posts#publish', on: :member
       put 'unpublish' => 'posts#unpublish', on: :member
