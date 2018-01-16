@@ -16,3 +16,8 @@
     <h2>Brak zakupionych biletów</h2>
   <% end %>
 </div>
+<div class="apple_pagination">
+  <div class="col-xl-12">
+    <%= will_paginate @tickets, container: false %>
+  </div>
+</div>

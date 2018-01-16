@@ -1,11 +1,19 @@
 <div class='col-sm-6 col-lg-4'>
   <div class="card">
-
-    <div class="card-topper" style='background-image: url(<%= ticket.picture_url %>);'></div>
-
+    <%= link_to event_url(ticket.event_id) do %>
+      <div class="card-topper" style='background-image: url(<%= ticket.picture_url %>);'></div>
+    <% end %>
     <div class="card-block">
-      <h4 class="card-title"><%= ticket.name %></h4>
+      <h4 class="card-title"><%= link_to ticket.name, event_url(ticket.event_id) %></h4>
       <h6 class="published-date">Posiadane bilety: <%= ticket.ticket_counter %></h6>
+      <h6 class="published-date">Zwrócone bilety: <%= ticket.return_counter %></h6>
+      <p class="card-text">Aby, zwrócić bilet nacisnij poniższy, przycisk. Następnie oczekuj na akceptacje zwrotu przez
+        administracje witryny. </p>
+      <% if ticket.ticket_counter > 0 %>
+        <%= button_to 'Zwróć bilet', authors_ticket_return_path, params: {body: 'super test', event_id: ticket.event_id, author_id: ticket.author_id, ticket_counter: ticket.ticket_counter, ticket_id: ticket.id}, method: :post, class: "btn btn-danger" %>
+      <% else %>
+        <button class="btn btn-danger" disabled="true">Nie możesz już zwracać biletów</button>
+      <% end %>
     </div>
   </div>
 </div>

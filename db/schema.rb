@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112003657) do
+ActiveRecord::Schema.define(version: 20180116110101) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -120,6 +120,9 @@ ActiveRecord::Schema.define(version: 20180112003657) do
     t.integer "author_id"
     t.integer "event_id"
     t.integer "ticket_counter"
+    t.boolean "is_return", default: false
+    t.integer "return_counter", default: 0
+    t.datetime "date"
     t.index ["author_id"], name: "index_tickets_on_author_id"
     t.index ["event_id"], name: "index_tickets_on_event_id"
   end

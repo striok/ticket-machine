@@ -5,7 +5,24 @@ module Authors
     # GET /tickets
     # GET /tickets.json
     def index
-      @tickets = current_author.tickets.most_recent
+      @tickets = current_author.tickets.most_recent.paginate(:page => params[:page], per_page: 5)
+    end
+
+    def returns
+      @returns = Ticket.where(is_return: true)
+    end
+
+    def ticket_return
+      ticket_id = params[:ticket_id].to_i
+
+      ticket = Ticket.find(ticket_id)
+      ticket.is_return = true
+      ticket.return_counter += 1
+      ticket.ticket_counter -= 1
+
+      ticket.save()
+
+      redirect_to authors_tickets_path
     end
 
     # GET /tickets/1
@@ -25,18 +42,6 @@ module Authors
     # POST /tickets
     # POST /tickets.json
     def create
-      # @ticket = current_author.Ticket.new(ticket_params)
-      #
-      # respond_to do |format|
-      #   if @ticket.save
-      #     format.html {redirect_to @ticket, notice: 'Ticket was successfully created.'}
-      #     format.json {render :show, status: :created, location: @ticket}
-      #   else
-      #     format.html {render :new}
-      #     format.json {render json: @ticket.errors, status: :unprocessable_entity}
-      #   end
-      # end
-
       event_id = params[:event_id].to_i
       ticket_counter = params[:ticket_counter].to_i
       author_id = params[:user_id].to_i
@@ -54,29 +59,58 @@ module Authors
       event.quantity -= ticket_counter
 
       if ticket != nil
-        puts ticket.name
-        puts ticket.ticket_counter
 
         counter = ticket.ticket_counter + ticket_counter
         if (counter) <= 5
           ticket.update(name: event.name, picture_url: event.event_picture_url,
-                                                        author_id: author_id, event_id: event_id, ticket_counter: counter)
+                        author_id: author_id, event_id: event_id, ticket_counter: counter, price: cost, date: event.date)
           ticket.save()
           event.save()
           current_author.save()
           redirect_to authors_tickets_url
         else
           redirect_to events_path, notice: 'Możesz posiadać tylko 5 biletów na to wydarzenie!'
-          
+
         end
       else
         ticket = Ticket.create(name: event.name, picture_url: event.event_picture_url,
-                               author_id: author_id, event_id: event_id, ticket_counter: ticket_counter)
+                               author_id: author_id, event_id: event_id, ticket_counter: ticket_counter, price: cost, date: event.date)
         ticket.save()
         event.save()
         current_author.save()
         redirect_to authors_tickets_url
       end
+    end
+
+    def return_all
+      event_id = params[:event_id].to_i
+      event_price = params[:event_id].to_f
+      ticket_counter = params[:ticket_counter].to_i
+      return_counter = params[:return_counter].to_i
+      date = params[:date].to_date
+      author_id = params[:author_id].to_i
+      author = Author.find(author_id)
+      ticket = Ticket.where(event_id: event_id).where(author_id: author_id)[0]
+
+      if ((I18n.l date, :format => "%d-%m-%Y") == Date.current.to_s)
+        returns = return_counter * (event_price * 0.2)
+      else
+        returns = return_counter * (event_price * 0.6)
+      end
+
+      author.money += returns
+      author.save()
+
+      if ((ticket_counter - return_counter) == 0)
+        ticket.destroy
+      else
+        ticket.ticket_counter = ticket_counter - return_counter
+        ticket.return_counter = 0
+        ticket.is_return = false
+      end
+
+      ticket.save()
+      redirect_to authors_returns_path
     end
 
     # PATCH/PUT /tickets/1

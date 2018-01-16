@@ -1,0 +1,8 @@
+<tr>
+  <td><%= r.name %> </td>
+  <td><%= r.price %></td>
+  <td><%= r.return_counter %></td>
+  <td><%= r.date %></td>
+  <td><%= r.author_id %></td>
+  <td><%= button_to 'Akceptuj', authors_return_all_path, params: {event_price: r.price, event_id: r.event_id, author_id: r.author_id, ticket_counter: r.ticket_counter, ticket_id: r.id, date: r.date, return_counter: r.return_counter}, method: :post, class: "btn btn-warning btn-pointer" %></td>
+</tr>

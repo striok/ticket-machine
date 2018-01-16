@@ -1,0 +1,38 @@
+<% provide(:page_title, "Zwroty biletów") %>
+<% provide(:author_returns_active, 'active') %>
+
+<div class="row">
+  <h2>Zwroty biletów na wydarzenia</h2>
+</div>
+<div class="row">
+  <% if @returns != nil %>
+    <table class="table table-striped">
+      <tr>
+        <th colspan="1">
+          Tytuł
+        </th>
+        <th>
+          Kwota
+        </th>
+        <th>
+          Ilość
+        </th>
+        <th>
+          Data
+        </th>
+        <th>
+          Author ID
+        </th>
+        <th>
+        </th>
+      </tr>
+      <% @returns.each do |r| %>
+        <%= render :partial => 'return', :locals => {:r => r} %>
+      <% end %>
+    </table>
+  <% else %>
+    <h3>Brak zwrotów biletów</h3>
+  <% end %>
+</div>
+
+

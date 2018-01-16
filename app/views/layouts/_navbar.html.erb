@@ -40,6 +40,7 @@
               <%= link_to 'Strona tytułowa', authors_starts_path, class: "dropdown-item #{yield(:start_page_active)}" %>
               <%= link_to 'Artykuły', authors_posts_path, class: "dropdown-item #{yield(:author_post_active)}" %>
               <%= link_to 'Wydarzenia', authors_events_path, class: "dropdown-item #{yield(:author_events_active)}" %>
+              <%= link_to 'Zwroty', authors_returns_path, class: "dropdown-item #{yield(:author_returns_active)}" %>
             <% end %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Konto', authors_account_path, class: "dropdown-item #{yield(:author_settings_active)}" %>
